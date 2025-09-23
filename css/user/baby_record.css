@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+/* Base Styles with Modern Approach */
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #2E7D32;
+    --primary-light: #C8E6C9;
+    --secondary-color: #2196F3;
+    --accent-color: #FFC107;
+    --text-dark: #333;
+    --text-medium: #555;
+    --text-light: #777;
+    --bg-light: #f9f9f9;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    background-color: #f5f5f5 !important;
+}
+
+
+/* Glassmorphism Header */
+.header-glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.logo-link:hover {
+    color: var(--primary-dark);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.logo-link:hover .logo-img {
+    transform: rotate(10deg);
+}
+
+/* Navigation */
+#nav-menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+#nav-menu a:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+#nav-menu a.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+#nav-menu a i {
+    font-size: 0.9em;
+}
+
+.signout {
+    background-color: #ff4444;
+    color: white !important;
+}
+
+.signout:hover {
+    background-color: #cc0000 !important;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+.clickable-row {
+    cursor: pointer;
+}
+.clickable-row:hover {
+    background-color: #f5f5f5;
+}
+.vaccine-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.vaccine-card.completed {
+    background-color: #e8f5e9;
+}
+.vaccine-card.pending {
+    background-color: #fff8e1;
+}
+.vaccine-card.missed {
+    background-color: #ffebee;
+}
+
+mark {
+    background-color: yellow;
+    padding: 1px 2px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.input-group {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.pagination .page-link {
+    color: #0d6efd;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+}
+
+.pagination .page-item:not(.disabled):not(.active):hover .page-link {
+    background-color: #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    
+    .input-group {
+        min-width: 100% !important;
+        margin-bottom: 10px;
+    }
+}
+
+.table-responsive {
+    border-radius: 0.375rem;
+}
+/* Add to your existing CSS */
+.edit-baby-btn {
+    margin-right: auto;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+@media (max-width: 768px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    
+    .input-group {
+        min-width: 100% !important;
+        margin-bottom: 10px;
+    }
+}
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .print-section, .print-section * {
+        visibility: visible;
+    }
+    .print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .header-glass{
+        padding: 15px 20px;
+    }
+    #nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 15px;
+    }
+    
+    #nav-menu.active {
+        display: flex;
+    }
+    
+    #nav-menu a {
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}

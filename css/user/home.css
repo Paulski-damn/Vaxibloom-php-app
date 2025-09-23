@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+    
+
+}
+
+header h1 {
+    flex: 1;
+}
+
+header h1 a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header nav a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #C8E6C9;
+}
+
+header nav a.active {
+    background-color:  #C8E6C9;
+    color: #2E7D32;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.back-button-container {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+    opacity: 0.9;
+}
+
+/* Sign Out Button */
+.signout {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.signout:hover {
+    background-color: #e60000;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    margin-right: 3px;
+    background: none;
+    border: none;
+    background-color: #A8D5BA;
+    color: #2E7D32;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    order: -1;
+}
+.menu-toggle:hover {
+  background-color: #94c9aa;
+}
+
+.menu-toggle.active {
+  background-color: #66BB6A;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+button {
+    background-color: #A8D5BA;
+    color: #1B5E20;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #94c9aa;
+}
+
+/* Vaccine Status Section */
+.vaccine-status {
+    margin-top: 20px;
+}
+
+.vaccine-status h3 {
+    margin-bottom: 15px;
+    color: #0c0c0c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+td, th {
+    word-break: break-word;
+    white-space: normal;
+}
+
+th {
+    background-color:  #C8E6C9;
+    color: black;
+    font-size: 16px;
+}
+
+td {
+    font-size: 14px;
+}
+
+.completed {
+    color: green;
+    font-weight: bold;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.not-yet {
+    color: red;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.notifications {
+    background-color: #ffe5e5;
+    border: 1px solid #ff4d4d;
+    color: #d80000;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.notifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notifications li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Responsive Header Nav */
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    header h1 {
+        order: 2;
+        flex: 1;
+        text-align: center;
+    }
+    
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        padding: 15px 0;
+        background-color: #ffffff;
+        margin-top: 15px;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    #nav-menu.active {
+        display: flex;
+        color: #2E7D32;
+    }
+    
+    #nav-menu a {
+        margin: 10px 0;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #nav-menu a.active {
+        background-color: #A8D5BA;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    .signout {
+        margin: 10px 0 0 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    header h1 a {
+        font-size: 1.3rem;
+    }
+    
+    header h1 img {
+        height: 40px;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    #nav-menu a {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+    .container {
+        padding: 10px;
+    }
+    
+    .signout {
+        padding: 12px 20px;
+    }
+}
+
+.notification-permission {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4A628A;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.notification-permission button {
+    background: white;
+    color: #4A628A;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.notification-permission button:hover {
+    background: #f0f0f0;
+}
+
+/* Status badges */
+.completed {
+    color: #28a745;
+    font-weight: bold;
+}
+.pending {
+    color: #ffc107;
+    font-weight: bold;
+}
+.not-yet {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .notification-permission {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+/* Add to home.css */
+#notificationPrompt {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4A628A;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    max-width: 320px;
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+  
+@keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+  
+#notificationPrompt button {
+    margin: 8px 5px 0 0;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+  
+#notificationPrompt button:first-child {
+    background: #28a745;
+    color: white;
+}
+  
+#notificationPrompt button:last-child {
+    background: #6c757d;
+    color: white;
+}
+  
+/* Service Worker debug badge */
+.sw-status {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    z-index: 10000;
+}

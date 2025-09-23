@@ -1,0 +1,517 @@
+.container {
+    display: flex;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa !important;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Hamburger Button - Aligned with logo */
+.hamburger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    background-color: #A8D5BA;
+    color: #2E7D32;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    background-color: #94c9aa;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 70px; /* Collapsed width - shows only icons */
+    background-color: #ffffff; /* Dark green background */
+    color: white;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    z-index: 1000;
+    padding-top: 70px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar:not(.collapsed) {
+    width: 250px; /* Expanded width */
+    padding-top: 20px;
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.logo-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-logo {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    top: 0;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Collapsed state */
+.sidebar.collapsed .sidebar-title {
+    display: none;
+}
+
+.sidebar.collapsed .logo-container {
+    margin-right: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 0;
+    top: 0;
+}
+
+/* Expanded state */
+.sidebar:not(.collapsed) .logo-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+.sidebar-title {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Fredoka One', cursive;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar:not(.collapsed) .sidebar-title {
+    display: block;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Active menu item */
+.sidebar ul li a.active {
+    background-color: #C8E6C9; /* Light green */
+    color: #2E7D32; /* Dark green text */
+}
+
+.sidebar ul li a.active i {
+    color: #2E7D32; /* Dark green icon */
+}
+
+.sidebar ul li a.active .menu-text {
+    font-weight: bold;
+}
+
+.menu-text {
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+    color: black;
+}
+
+.sidebar.collapsed .menu-text {
+    opacity: 0;
+    width: 0;
+    display: none;
+}
+
+/* Hover effect */
+.sidebar ul li a:hover:not(.active) {
+    background-color: rgba(200, 230, 201, 0.2); /* Light green with transparency */
+}
+
+/* Icons */
+.sidebar ul li a i {
+    min-width: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.logout {
+    margin-top: 120px;
+    background-color: white;
+    color: #e74c3c !important;
+    border: 1px solid #e0e0e0;
+}
+
+.logout i {
+    color: #000;
+}
+
+.logout:hover {
+    background-color: #e74c3c;
+    color: #e74c3c !important;
+    border-color: #e74c3c;
+}
+
+.logout:hover i {
+    color: #e74c3c;
+}
+/* Content Area */
+.content {
+    margin-left: 70px; /* Matches collapsed sidebar */
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 70px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+.sidebar:not(.collapsed) ~ .content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.content {
+    margin-left: 70px; /* Default for collapsed sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px; /* Optional padding */
+}
+
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.search-bar input {
+    padding: 5px;
+    width: 200px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+/* Styling for back button after searching */
+.back-button {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+
+.back-button button {
+    background-color: #5bc0de; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button button:hover {
+    background-color: #39bbe2; /* Darker blue when hovered */
+}
+
+.back-button button:focus {
+    outline: none;
+}
+
+
+/* Styling for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+table thead {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-info {
+    background-color: #5bc0de;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.edit-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+    margin-left: 5px;
+}
+ /* Styles for modal */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Ensures it's positioned relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Exact centering */
+    width: 400px; /* Adjust width */
+    height: fit-content; /* Set a fixed height */
+    background-color: white; /* Modal background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    z-index: 1000; /* Ensure it appears above other content */
+    box-sizing: border-box; /* Include padding and borders in width/height */
+    overflow: hidden; /* Prevent content overflow */
+ }
+.modal-content {
+    background-color: #fefefe; /* Light background */
+    margin: 20px auto; /* Center the content inside modal */
+    padding: 20px; /* Add inner padding */
+    width: 340px; /* Take full width of modal */
+    height:fit-content; /* Allow dynamic height */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    overflow-y:initial;
+    box-sizing: border-box; /* Include padding in width */
+}
+/* Additional styles for better appearance */
+.modal input[type="text"],
+.modal input[type="date"] {
+    height: 5px;
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Add some spacing */
+    margin: 8px 0; /* Add space between fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded edges */
+    box-sizing: border-box; /* Include padding in input width */
+    font-size: 14px; /* Adjust font size */
+}
+.modal button {
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Button size */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 14px; /* Adjust font size */
+    margin-top: 10px; /* Space above the button */
+    width: 100%; /* Full width */
+    text-align: center;
+}
+.modal button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.modal h1 {
+    text-align: center; /* Center the title */
+    font-size: 20px; /* Larger font size for title */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.editmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Ensures it's positioned relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Exact centering */
+    width: 400px; /* Adjust width */
+    height: fit-content; /* Set a fixed height */
+    background-color: white; /* Modal background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    z-index: 1000; /* Ensure it appears above other content */
+    box-sizing: border-box; /* Include padding and borders in width/height */
+    overflow: hidden; /* Prevent content overflow */
+}
+.editmodal-content {
+    background-color: #fefefe; /* Light background */
+    margin: 20px auto; /* Center the content inside modal */
+    padding: 20px; /* Add inner padding */
+    width: 340px; /* Take full width of modal */
+    height:fit-content; /* Allow dynamic height */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    overflow-y:initial;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Additional styles for better appearance */
+.editmodal input[type="text"],
+.editmodal input[type="date"] {
+    height: 5px;
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Add some spacing */
+    margin: 8px 0; /* Add space between fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded edges */
+    box-sizing: border-box; /* Include padding in input width */
+    font-size: 14px; /* Adjust font size */
+}
+
+.editmodal button {
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Button size */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 14px; /* Adjust font size */
+    margin-top: 10px; /* Space above the button */
+    width: 100%; /* Full width */
+    text-align: center;
+}
+
+.editmodal button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.editmodal h1 {
+    text-align: center; /* Center the title */
+    font-size: 20px; /* Larger font size for title */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color:  #C8E6C9;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #2E7D32;
+    color: black;
+}
+
+.pagination a.active {
+    background-color:  #C8E6C9;
+    color: black;
+}
+.pagination a.active:hover {
+    background-color:  #2E7D32;
+}
+.vaccine-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vaccine-badge {
+            background-color:  #C8E6C9;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            display: inline-flex;
+            align-items: center;
+        }
+        .vaccine-badge i {
+            margin-right: 5px;
+        }

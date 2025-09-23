@@ -1,0 +1,43 @@
+{
+{
+  "name": "VaxiBloom",
+  "short_name": "VaxiBloom",
+  "start_url": "/system/user/home.php",
+  "display": "standalone",
+  "background_color": "#4A628A",
+  "theme_color": "#4A628A",
+  "description": "Vaccination tracking system",
+  "icons": [
+    {
+      "src": "/img/logo.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "gcm_sender_id": "103953800507",
+  "gcm_user_visible_only": true,
+  "permissions": ["notifications", "push"]
+,
+    "screenshots": [
+      {
+        "src": "/img/logo.jpg",
+        "type": "image/png",
+        "sizes": "1280x720"
+      }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "protocol_handlers": [
+      {
+        "protocol": "web+vaxibloom",
+        "url": "/system/user/home.php?action=%s"
+      }
+    ]
+  }

@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* Sidebar Styles */
+.sidebar {
+    width: 50px; /* Initial collapsed width */
+    background-image: linear-gradient(to bottom right, #4A628A, #17283f);
+    color: white;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: width 0.3s ease; /* Smooth expansion */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    z-index: 10; /* Ensure it stays on top */
+}
+
+/* Expand sidebar on hover */
+.sidebar:hover {
+    width: 250px; /* Full width on hover */
+}
+
+/* Sidebar title styles */
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    display: none; /* Hidden by default */
+}
+
+.sidebar:hover h2 {
+    display: block; /* Show title on hover */
+}
+
+/* Sidebar list styles */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: padding-left 0.3s ease; /* Smooth padding transition */
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #f4f4f4;
+    color: #17283f;
+    
+}
+
+.sidebar:hover ul li a {
+    padding-left: 20px; /* Increase padding on hover */
+}
+.content {
+    margin-left: 60px; /* Initial margin when sidebar is collapsed */
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 60px);
+    transition: margin-left 0.3s ease;
+}
+.sidebar:hover ~ .content {
+    margin-left: 250px; /* Adjust content margin when sidebar is expanded */
+    width: calc(100% - 250px);
+}
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.content h1 {
+    font-size: 28px;
+}
+.content p {
+    font-size: 18px;
+}
+/* to edit the logout button*/
+.logout {
+    margin-top: 300px;
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.logout:hover {
+    background-color: #c0392b;
+}
+/* to edit the content of vaccine*/
+.vaccine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 20px;
+    text-align: center;
+}
+
+.dropdown1 {
+    background-color: #5bc0de;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+
+}
+.dropdown2 {
+    background-color: #5bc0de;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.dropdown3 {
+    background-color: #5bc0de;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.dropdown4 {
+    background-color: #5bc0de;
+    color: white;
+    margin-top: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.dropdown5 {
+    background-color: #5bc0de;
+    color: white;
+    margin-top: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.dropdown6 {
+    background-color: #5bc0de;
+    color: white;
+    margin-top: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: black;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+    z-index: 1;
+}
+.dropdown-content.active {
+    display: block;
+}
+.dropdown.active .dropdown-content {
+    display: block;
+}

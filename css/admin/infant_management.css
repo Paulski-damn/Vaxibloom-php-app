@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa !important;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Hamburger Button - Aligned with logo */
+.hamburger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    background-color: #A8D5BA;
+    color: #2E7D32;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    background-color: #94c9aa;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 70px; /* Collapsed width - shows only icons */
+    background-color: #ffffff; /* Dark green background */
+    color: white;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    z-index: 1000;
+    padding-top: 70px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar:not(.collapsed) {
+    width: 250px; /* Expanded width */
+    padding-top: 20px;
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.logo-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-logo {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    top: 0;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Collapsed state */
+.sidebar.collapsed .sidebar-title {
+    display: none;
+}
+
+.sidebar.collapsed .logo-container {
+    margin-right: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 0;
+    top: 0;
+}
+
+/* Expanded state */
+.sidebar:not(.collapsed) .logo-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+.sidebar-title {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Fredoka One', cursive;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar:not(.collapsed) .sidebar-title {
+    display: block;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Active menu item */
+.sidebar ul li a.active {
+    background-color: #C8E6C9; /* Light green */
+    color: #2E7D32; /* Dark green text */
+}
+
+.sidebar ul li a.active i {
+    color: #2E7D32; /* Dark green icon */
+}
+
+.sidebar ul li a.active .menu-text {
+    font-weight: bold;
+}
+
+.menu-text {
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+    color: black;
+}
+
+.sidebar.collapsed .menu-text {
+    opacity: 0;
+    width: 0;
+    display: none;
+}
+
+/* Hover effect */
+.sidebar ul li a:hover:not(.active) {
+    background-color: rgba(200, 230, 201, 0.2); /* Light green with transparency */
+}
+
+/* Icons */
+.sidebar ul li a i {
+    min-width: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.logout {
+    margin-top: 120px;
+    background-color: white;
+    color: #e74c3c !important;
+    border: 1px solid #e0e0e0;
+}
+
+.logout i {
+    color: #000;
+}
+
+.logout:hover {
+    background-color: #e74c3c;
+    color: #e74c3c !important;
+    border-color: #e74c3c;
+}
+
+.logout:hover i {
+    color: #e74c3c;
+}
+
+/* Content Area */
+.content {
+    margin-left: 70px; /* Matches collapsed sidebar */
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 70px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+.sidebar:not(.collapsed) ~ .content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.content {
+    margin-left: 70px; /* Default for collapsed sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px; /* Optional padding */
+}
+/* Styling for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color:  #C8E6C9;
+    color: black;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.filter-dropdown, .search-bar, .filter-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+.filter-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.action-btn {
+    padding: 8px 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.completed {
+    background-color: #28a745; /* Green */
+}
+
+.completed:hover {
+    background-color: #218838;
+}
+
+.canceled {
+    background-color: #dc3545; /* Red */
+}
+
+.canceled:hover {
+    background-color: #c82333;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.pagination .active {
+    background-color:  #C8E6C9;
+    color: black;
+}
+
+.pagination .active:hover {
+    background-color: #2E7D32;
+}
+.action-btn.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-btn.delete:hover {
+    background-color: #c82333;
+}
+/* Add to your existing CSS */
+.canceled-status {
+    color: #dc3545; /* Bootstrap danger red */
+    font-weight: bold;
+}
+
+.completed-status {
+    color: #28a745; /* Bootstrap success green */
+    font-weight: bold;
+}
