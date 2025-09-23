@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,21 +54,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1>
             <a href="../../index.php" style="display: flex; align-items: center; text-decoration: none; color: black;">
-                <img src="../../img/logo1.png" alt="VaxiBloom Logo" style="height: 50px; width: auto; margin-right: 5px">VaxiBloom
+                <img src="../../img/logo1.png" alt="VaxiBloom Logo"
+                    style="height: 50px; width: auto; margin-right: 5px">VaxiBloom
             </a>
         </h1>
     </header>
-    
+
     <main class="main-content">
         <div class="login-container">
             <h2>Welcome Back!</h2>
-            
+
             <?php if (isset($error)): ?>
-                <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
+            <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
             <?php endif; ?>
 
             <form method="POST" action="" class="login-form">
@@ -83,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
 
                 <button type="submit" class="login-btn">Login</button>
-                
+
                 <div class="form-footer">
                     <p>Don't have an account? <a href="../user/register.php">Register here</a></p>
                     <div class="role-links">
@@ -95,18 +98,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </main>
 
     <script>
-        function togglePassword() {
-            const passwordField = document.getElementById("password");
-            const toggleIcon = document.getElementById("togglePasswordIcon");
-            
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                toggleIcon.classList.replace("fa-eye", "fa-eye-slash");
-            } else {
-                passwordField.type = "password";
-                toggleIcon.classList.replace("fa-eye-slash", "fa-eye");
-            }
+    function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const toggleIcon = document.getElementById("togglePasswordIcon");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            toggleIcon.classList.replace("fa-eye-slash", "fa-eye");
         }
+    }
     </script>
 </body>
+
 </html>
