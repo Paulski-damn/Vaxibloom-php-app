@@ -1,4 +1,23 @@
-vendor/
-node_modules/
-*.log
+# Ignore environment files
 .env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore vendor (for PHP projects with Composer)
+vendor/
+
+# Ignore node_modules (if you ever use Node.js)
+node_modules/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore backups and logs
+*.log
+*.sql
+*.sqlite
+# Ignore environment and config files
+config.php
