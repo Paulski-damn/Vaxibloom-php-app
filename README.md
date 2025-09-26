@@ -65,9 +65,11 @@ It ensures age eligibility, dose dependencies, vaccine stock tracking, and preve
 
 ---
 
-## 📑 Sample Download
-📥 [Download Sample Vaccine Stock Report (Excel)](assets/vaccine_inventory_2025-09-26.xls)
+## 📊 Vaccine Stocks
 
----
+Here’s a preview of the vaccine stock records:
+
+![Vaccine Stocks Screenshot](assets/excel-stocks.png)
+
 
 
