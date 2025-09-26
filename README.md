@@ -27,7 +27,7 @@ It ensures age eligibility, dose dependencies, vaccine stock tracking, and preve
 <details>
   <summary>📦 Vaccine Inventory</summary>
 
-  ![Inventory List](assets/admin_inventory.png)  
+  ![Inventory List](assets/vaccine_inventory.png)  
   ![Stock Transfer](assets/stock_transfer.png)
 
 </details>
@@ -35,7 +35,7 @@ It ensures age eligibility, dose dependencies, vaccine stock tracking, and preve
 <details>
   <summary>📊 Reports & Mapping</summary>
 
-  ![Vaccination Report](assets/report.png)  
+  ![Vaccination Report](assets/admin_report.png)  
   ![Barangay Mapping](assets/admin_map.png)
 
 </details>
