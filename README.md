@@ -20,14 +20,14 @@ It ensures age eligibility, dose dependencies, vaccine stock tracking, and preve
   <summary>📅 Appointments</summary>
 
   ![Appointment Form](assets/appointment_form.png)  
-  ![Appointment Calendar](assets/appointment_list.png)
+  ![Appointment Calendar](assets/appointment_listpng.png)
 
 </details>
 
 <details>
   <summary>📦 Vaccine Inventory</summary>
 
-  ![Inventory List](assets/inventory_inventory.png)  
+  ![Inventory List](assets/admin_inventory.png)  
   ![Stock Transfer](assets/stock_transfer.png)
 
 </details>
@@ -36,7 +36,7 @@ It ensures age eligibility, dose dependencies, vaccine stock tracking, and preve
   <summary>📊 Reports & Mapping</summary>
 
   ![Vaccination Report](assets/report.png)  
-  ![Barangay Mapping](assets/mapping.png)
+  ![Barangay Mapping](assets/admin_map.png)
 
 </details>
 
