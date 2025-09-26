@@ -4,14 +4,14 @@ A web-based system that helps Barangay Health Workers (BHW) and the Rural Health
 It ensures age eligibility, dose dependencies, vaccine stock tracking, and prevents duplicate/completed vaccinations.
 
 ## 📸 Main Preview
-[![Preview](assets/admin_dashboard.png)](assets/user_dashboard.png)
+[![Preview](assets/landingpage.png)](assets/landingpage.png)
 
 ## 📂 Screenshots by Module
 
 <details>
   <summary>👶 Baby Records</summary>
 
-  ![Baby List](assets/baby-list.png)  
+  ![Baby List](assets/baby_list.png)  
   ![Baby Profile](assets/baby-profile.png)
 
 </details>
